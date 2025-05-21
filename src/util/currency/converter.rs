@@ -18,7 +18,7 @@ const CURRENCY_CONFIG_PATH: &str = "currencies.json";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OutputLanguage {
-    Russian,
+    Ukraine,
     // English,
 }
 
