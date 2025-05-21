@@ -27,11 +27,8 @@ pub async fn start_handler(bot: Bot, message: Message, config: &Config) -> Resul
         "<b>[BETA]</b> Telegram Bot by @Weever\n\
         <pre>\
         > <b>Version</b>: {}\n\
-        > <b>API Ping</b>: {} ms\n\
-        > <b>CPU Usage</b>: {:.2}%\n\
-        > <b>RAM Usage</b>: {}/{} MB\n\
         </pre>",
-        version, api_ping, cpu_usage_percent, used_ram_mb, total_ram_mb
+        version
     );
 
     bot.send_message(message.chat.id, response_message)
