@@ -12,7 +12,7 @@ use teloxide::Bot;
 
 pub async fn transcription_handler(bot: Bot, msg: Message, config: &Config) -> Result<(), MyError> {
     let message = bot
-        .send_message(msg.chat.id, "Обрабатываю аудио...")
+        .send_message(msg.chat.id, "Обробляю аудіо...")
         .reply_parameters(ReplyParameters::new(msg.id))
         .parse_mode(ParseMode::Html)
         .await
@@ -52,7 +52,7 @@ pub async fn transcription_handler(bot: Bot, msg: Message, config: &Config) -> R
             bot.edit_message_text(
                 msg.chat.id,
                 message.id,
-                "Не удалось найти голосовое сообщение.",
+                "Не вдалося найти голосове повідомлення.",
             )
             .parse_mode(ParseMode::Html)
             // .reply_markup(delete_message_button())
@@ -120,7 +120,7 @@ impl Transcription {
         let mut settings = gem_rs::types::Settings::new();
         settings.set_all_safety_settings(HarmBlockThreshold::BlockNone);
 
-        let error_answer = "❌ Не удалось преобразовать текст из сообщения.".to_string();
+        let error_answer = "❌ Не вдалося отримати текст.".to_string();
 
         let ai_model = self.config.get_json_config().get_ai_model().to_owned();
         let prompt = self.config.get_json_config().get_ai_prompt().to_owned();
